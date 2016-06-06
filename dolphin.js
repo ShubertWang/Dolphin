@@ -927,18 +927,18 @@
     Dolphin.i18n.get = function(key){
         var language = this.defaults.defaultLang;
         var template = Dolphin.messages[language][key],
-            i, str;
+            i;
 
         if(template){
             for(i = 1; i < arguments.length; i++){
-                str = template.replace('{' + i + '}', arguments[i]);
+                template = template.replace('{' + i + '}', arguments[i]);
             }
 
         }else{
-            str = key;
+            template = key;
         }
 
-        return str;
+        return template;
     };
 
     Dolphin.i18n.load = function (code, param) {
